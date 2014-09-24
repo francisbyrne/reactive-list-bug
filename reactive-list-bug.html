@@ -1,0 +1,28 @@
+<head>
+  <title>reactive-list-bug</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> checklist}}
+</body>
+
+<template name="checklist">
+  <ul>
+    {{#each items}}
+    <li>
+      <label>
+        <input 
+          type="checkbox" 
+          value="{{value}}" 
+          checked="{{isChecked}}" 
+          data-id="{{_id}}" 
+        /> {{name}}
+      </label>
+      <span>&nbsp;&nbsp;&nbsp; Status: {{status}}</span>
+    </li>
+    {{/each}}
+  </ul>
+      {{checkedIds}}
+</template>
